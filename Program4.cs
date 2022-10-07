@@ -1,14 +1,23 @@
 using System;
-namespace HelloApp
+using System.Globalization;
+
+class Program
 {
-    class Program
+    static void Main(string[] args)
     {
-        static void Main(string[] args)
-        {
-            string name = "Tom";//обьявление переменной и присваивание значения типа string
-            int age = 34;//обьявление переменной и присваивание значения типа int
-            double height = 1.7;//обьявление переменной и присваивание значения типа double
-            Console.WriteLine("Имя: {0} Возраст: {2} Рост: {1}м", name, height, age);//вывод на экран имени,возраста и роста человека
-            Console.ReadKey();//ожидание нажатия клавиши
-        }
+        Console.Write("a= ");
+        var a = int.Parse(Console.ReadLine());
+        Console.Write("b= ");
+        var b = int.Parse(Console.ReadLine());
+        Console.Write("c= ");
+        var c = int.Parse(Console.ReadLine());
+        double f1 = a / Math.PI;
+        double f2 = c / Math.E;
+        double F1 = Math.Round(f1, 4, MidpointRounding.AwayFromZero);
+        double F2 = Math.Round(f2, 3, MidpointRounding.AwayFromZero);
+        double pi = Math.Round(Math.PI, 4, MidpointRounding.AwayFromZero);
+        double e = Math.Round(Math.E, 3, MidpointRounding.AwayFromZero);
+        Console.WriteLine("a/PI={0}/{1}={2:N4}   a+b+c={3}+{4}+{5}={6}   c/E={7}/{8}={9}", a, pi, F1, a, b, c, a+b+c, c, e, F2);
+        Console.ReadKey();
     }
+}
