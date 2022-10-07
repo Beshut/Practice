@@ -22,5 +22,6 @@ class Program
         double pi2 = Math.Round(Math.PI, 2, MidpointRounding.AwayFromZero); ;
         double e2 = Math.Round(Math.E, 2, MidpointRounding.AwayFromZero); ;
         Console.WriteLine("a*PI: {0}*{1}={2:N4}  b*E: {3}*{4}={5:N3}   c*PI*E: {6}*{7}*{8}={9}", a, pi1, F1, b, e1, F2, c, pi2, e2, F3);
+        Console.ReadKey();
     }
 }
