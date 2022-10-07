@@ -1,18 +1,13 @@
 using System;
-namespace HelloApp
+class Program
 {
-    class Program
+    static void Main(string[] args)
     {
-        static void Main(string[] args)
-        {
-            string name = "Tom";//обьявление переменной и присваивание значения типа string
-            int age = 33;//обьявление переменной и присваивание значения типа int
-            bool isEmployed = false; //обьявление переменной и присваивание значения типа bool
-            double weight = 78.65;//обьявление переменной и присваивание значения типа double
-            Console.WriteLine($"Имя: {name}");//вывод имени на экран 
-            Console.WriteLine($"Возраст: {age}");//вывод возраста на экран 
-            Console.WriteLine($"Вес: {weight}"); //вывод веса на экран 
-            Console.WriteLine($"Работает: {isEmployed}");//вывод трудоустроен ли человек на экран 
-        }
+        Console.Write("a= ");
+        var a = double.Parse(Console.ReadLine());
+        Console.Write("b= ");
+        var b = double.Parse(Console.ReadLine());
+        Console.WriteLine("{0:N3}/{1:N3}={2:N3}", a, b, a / b);
+        Console.ReadKey();
     }
 }
