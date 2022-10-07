@@ -1,16 +1,13 @@
 using System;
-namespace HelloApp
+class Program
 {
-    class Program
+    static void Main(string[] args)
     {
-        static void Main(string[] args)
-        {
-            string hello = "Привет мир";//обьявление переменной и присваивание значения типа string
-            Console.WriteLine(hello);//вывод на экран переменную hello
-            Console.WriteLine("Добро пожаловать в C#!");//вывод на экран сообщения пользователю
-            Console.WriteLine("Пока мир...");//вывод на экран сообщения пользователю
-            Console.WriteLine(24.5);//вывод на экран число 24.5
-            Console.ReadKey();//ожидание нажатия клавиши
-        }
+        Console.Write("a= ");
+        var a = double.Parse(Console.ReadLine());
+        Console.Write("b= ");
+        var b = double.Parse(Console.ReadLine());
+        Console.WriteLine("{0:N2}/{1:N2}={2:N2}", b, a, b / a);
+        Console.ReadKey();
     }
 }
