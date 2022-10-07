@@ -1,15 +1,16 @@
 using System;
-namespace HelloApp
+using System.Globalization;
+
+class Program
 {
-    class Program
+    static void Main(string[] args)
     {
-        static void Main(string[] args)
-        {
-            string name = "Tom";//обьявление переменной и присваивание значения типа string
-            int age = 34;//обьявление переменной и присваивание значения типа int
-            double height = 1.7;//обьявление переменной и присваивание значения типа double
-            Console.WriteLine($"Имя: {name} Возраст: {age} Рост: {height}м");//вывод на экран имени,возраста и роста человека
-            Console.ReadKey();//ожидание нажатия клавиши
-        }
+        Console.Write("x= ");
+        var x = double.Parse(Console.ReadLine());
+        Console.Write("y= ");
+        var y = int.Parse(Console.ReadLine());
+        double x1 = x * 3 / y;
+        Console.WriteLine("Округленный с точностью до 4 знаков результат: {0}/{1}={2:N4}", x * 3, y, x1);
+        
     }
 }
