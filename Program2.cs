@@ -4,19 +4,16 @@ class Program
 {
     static void Main(string[] args)
     {
-        Console.Write("Введите первую сторону: ");
+        Console.Write("Введите сторону a: ");
         var a = int.Parse(Console.ReadLine());
-        Console.Write("Введите вторую сторону: ");
+        Console.Write("Введите сторону b: ");
         var b = int.Parse(Console.ReadLine());
-        Console.Write("Введите угол между сторонами: ");
-        var y_g = int.Parse(Console.ReadLine());
-        double y_r = y_g * (Math.PI / 180);
-        double S;
-        if (y_g == 30)
-            S = (0.5) * a * b * (0.5);
+        Console.Write("Введите сторону c: ");
+        var c = int.Parse(Console.ReadLine());
+        if (a == b && b == c)
+            Console.WriteLine("Треугольник равносторонний");
         else
-            S = (0.5) * a * b * Math.Sin(y_r);
-        Console.WriteLine("Площадь треугольника: {0}", S);
+            Console.WriteLine("Треугольник не равносторонний");
         Console.ReadKey();
     }
 }
