@@ -4,15 +4,17 @@ class Program
 {
     static void Main(string[] args)
     {
-        Console.WriteLine("Переменная x может принимать такие значения: -1<=x<=2, x=10");
-        Console.Write("Введите x: ");
-        var x = double.Parse(Console.ReadLine());
-        double y;
-        if (-1 <= x && x <= 2)
-            y = 2 * Math.Sqrt(Math.Abs(x + 1));
-        else
-            y = 2 * Math.Tan(Math.Pow(Math.E, x)) - Math.Sin(x);
-        Console.WriteLine("y = {0}", y);
+     double a,b,i1,i3;
+     int j = 0;
+     for (int i = 100; i<1000; i++)
+     {
+      i1 = i/100;
+      i3 = i/10;
+      a = Math.Round(i1);
+      b = i-Math.Round(i3)*10;
+      if (a==b)
+       Console.WriteLine(i);
+       }
         Console.ReadKey();
     }
 }
