@@ -1,20 +1,36 @@
 using System;
-
 class Program
 {
     static void Main(string[] args)
     {
-     double a,b,i1,i3;
-     int j = 0;
-     for (int i = 100; i<1000; i++)
-     {
-      i1 = i/100;
-      i3 = i/10;
-      a = Math.Round(i1);
-      b = i-Math.Round(i3)*10;
-      if (a==b)
-       Console.WriteLine(i);
-       }
+        Console.Write("Введите до какого члена суммы проводятся вычисления: ");
+        var n = int.Parse(Console.ReadLine());
+        Console.Write("Введите x: ");
+        var x = int.Parse(Console.ReadLine());
+        double Proc;
+        double Fin = 0;
+        int j = 1;
+        int Fact = 1;
+        int[] mas = new int[n];
+        for (int k = 0; k < n; k++)
+        {
+            while (j <= k)
+            {
+                Fact = Fact * j;
+                j = j + 1;
+            }
+            mas[k] = Fact;
+            Fact = 1;
+            j = 1;
+        }
+
+        for (int i = 0; i < n; i++)
+        {
+            Proc = ((Math.Pow(i, 2) + 1) / mas[i]) * Math.Pow((double)x / 2, i);
+            Fin = Fin + Proc;
+        }
+
+        Console.WriteLine("Сумма {0} членов: {1}", n, Fin);
         Console.ReadKey();
     }
 }
