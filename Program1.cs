@@ -3,34 +3,53 @@ class Program
 {
     static void Main(string[] args)
     {
-        Console.Write("Введите до какого члена суммы проводятся вычисления: ");
-        var n = int.Parse(Console.ReadLine());
-        Console.Write("Введите x: ");
-        var x = int.Parse(Console.ReadLine());
+        int n = 1;
         double Proc;
+        double Dop = 0;
         double Fin = 0;
         int j = 1;
         int Fact = 1;
-        int[] mas = new int[n];
-        for (int k = 0; k < n; k++)
+        int k1 = 1;
+        int n1 = 0;
+
+        for (int i = 0; i < n; i++)
         {
-            while (j <= k)
+            while (j <= k1)
             {
                 Fact = Fact * j;
                 j = j + 1;
             }
-            mas[k] = Fact;
-            Fact = 1;
-            j = 1;
+
+            Proc = Math.Pow(-1, i) * Math.Pow(Math.PI / 3, 2 * i + 1) / Fact;
+            k1++;
+            Dop = Math.Abs(Proc);
+            if (Dop < 0.00005)
+            {
+                n1 = i;
+                n = i;
+            }
+            if (Dop > 0.00005)
+                n++;
         }
+
+        Proc = 0;
+        j = 1;
+        k1 = 1;
+        Fact = 1;
 
         for (int i = 0; i < n; i++)
         {
-            Proc = ((Math.Pow(i, 2) + 1) / mas[i]) * Math.Pow((double)x / 2, i);
+            while (j <= k1)
+            {
+                Fact = Fact * j;
+                j = j + 1;
+            }
+            Proc = Math.Pow(-1, i) * Math.Pow(Math.PI / 3, 2 * i + 1) / Fact;
             Fin = Fin + Proc;
+            k1 = k1 + 2;
         }
 
-        Console.WriteLine("Сумма {0} членов: {1}", n, Fin);
+        Console.WriteLine("sin(п/3) = s = {0}",Fin);
         Console.ReadKey();
     }
 }
